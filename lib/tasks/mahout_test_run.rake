@@ -16,9 +16,13 @@ namespace :mahout do
 
     MahoutRecommender = org.apache.mahout.cf.taste.impl.recommender
     recommender = MahoutRecommender.GenericBooleanPrefUserBasedRecommender.new(model, neighborhood, similarity)
-    recommendations = recommender.recommend(8, 5)
+    recommendations = recommender.recommend(8, 5, nil)
 
     puts recommendations
+    recommendations.each do |r|
+      puts r.itemID
+      puts r.value
+    end 
 
   end
 end
