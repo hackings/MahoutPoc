@@ -6,7 +6,7 @@ namespace :mahout do
     Dir.glob("#{ENV['MAHOUT_DIR']}/libexec/*.jar").each { |d| require d }
 
     MahoutFile = org.apache.mahout.cf.taste.impl.model.file
-    model = MahoutFile.FileDataModel.new(java.io.File.new("../../test/fixtures/data.csv"))
+    model = MahoutFile.FileDataModel.new(java.io.File.new("#{Rails.root.to_s}/test/fixtures/data.csv"))
 
     MahoutSimilarity = org.apache.mahout.cf.taste.impl.similarity
     similarity = MahoutSimilarity.TanimotoCoefficientSimilarity.new(model)
