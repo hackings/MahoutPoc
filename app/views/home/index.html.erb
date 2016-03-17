@@ -1,0 +1,10 @@
+<h1>List</h1>
+<table border="1">
+   <% @recommendations.each do |r| %>
+	<tr>
+     <td><%= r.itemID%></td>
+     <td><%= r.value%></td>
+	</tr>
+	<% end %>
+</table>
+
